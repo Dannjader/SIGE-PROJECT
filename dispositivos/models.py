@@ -9,8 +9,8 @@ class Responsable(models.Model):
     apellido = models.CharField(max_length=100)
     cargo = models.CharField(max_length=100)
 
-    def __str__(self):
-        return self['nombre', 'apellido', 'cargo']
+def __str__(self):
+    return self['nombre', 'apellido', 'cargo']
 
 
 class Dispositivo(models.Model):
@@ -37,20 +37,18 @@ class Servicio(models.Model):
     tipo_servicio = models.CharField(max_length=100, choices=CHOICES)
     requerimiento = models.CharField(max_length=200)
     solucion = models.TextField(max_length=1000)
-    fecha_inicio = models.DateTimeField()
-    fecha_fin = models.DateTimeField()
+    fecha = models.DateTimeField("fecha_servicio")
     dispositivos = models.ManyToManyField(Dispositivo)
 
 
 def __str__(self):
-    return self['tipo_servicio', 'requerimiento', 'solucion', 'fecha_inicio', 'fecha_fin']
+    return self['tipo_servicio', 'requerimiento', 'solucion', 'fecha']
 
 
 class Tecnico(models.Model):
     nombre = models.CharField(max_length=50)
     apellido = models.CharField(max_length=50)
     correo = models.CharField(max_length=50)
-    servicios = models.ManyToManyField(Servicio)
 
 
 def __str__(self):
