@@ -9,4 +9,7 @@ urlpatterns = [
     path('servicios/', servicios_list, name='servicios'),
     path('reportes/', reporte_list, name='reportes'),
     path('login/', login_view, name='login'),
-]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
