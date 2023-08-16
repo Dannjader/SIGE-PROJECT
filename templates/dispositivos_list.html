@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block title %}Dispositivos{% endblock  %}
+    <link rel="stylesheet" href="{% static '/dispositivos/tables.css' %}" >
+</head>
+<body>
+{% block content %}
+<table>
+    <tr id="table">
+        <th>Serial</th>
+        <th>Tipo de dispositivo</th>
+        <th>Marca</th>
+        <th>Modelo</th>
+        <th>Activo viejo</th>
+        <th>Activo nuevo</th>
+        <th>Ubicación</th>
+    </tr>
+    {% for dispositivo in dispositivos %}
+    <tr>
+        <td>{{ dispositivo.serial }}</td>
+        <td>{{ dispositivo.tipo_dispositivo }}</td>
+        <td>{{ dispositivo.marca }}</td>
+        <td>{{ dispositivo.modelo }}</td>
+        <td>{{ dispositivo.activo_viejo }}</td>
+        <td>{{ dispositivo.activo_nuevo }}</td>
+        <td>{{ dispositivo.ubicacion }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
+</body>
+</html>

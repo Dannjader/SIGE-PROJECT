@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static '../static/dispositivos/base.css' %} "> 
+</head>
+<body>
+
+    <nav class="navbar">
+        <a  class="active" href="{% url 'inicio' %}">Inicio</a>
+        <a href="{% url 'dispositivos' %}">Dispositivos</a>
+        <a href="{% url 'servicios' %}">Servicios</a>
+        <a href="{% url 'reportes' %}">Reportes</a>  
+    </nav>
+    {% block content %}
+
+   
+    
+    {% endblock %}
+    
+</body>
+</html>
