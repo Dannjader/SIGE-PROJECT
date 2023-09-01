@@ -1,0 +1,31 @@
+{% extends './base.html' %}
+{% load tailwind_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock%}</title>
+    {% tailwind_css %}
+</head>
+<body>
+    {% block content %}
+
+    <div className="relative flex flex-col rounded-xl bg-transparent bg-clip-border text-gray-700 shadow-none">
+        <h4 className="block font-sans text-2xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased">
+            Sign Up
+          </h4>
+        <div>
+            <div>
+                <form method="post">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button type="submit">Login</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    {% endblock  %}
+</body>
+</html>
