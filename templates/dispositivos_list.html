@@ -10,9 +10,15 @@
 </head>
 <body>
 {% block content %}
-    <div class="w-full">
+
+<form method="GET" action="{% url 'dispositivos' %}">
+    <input type="text" name="q" placeholder="Buscar dispositivo">
+    <input type="submit" value="Buscar">
+</form>
+
+    <div class="fl">
         <div>
-            <table class="table-auto">
+            <table>
                 <tr class="w-full">
                     <th>Serial</th>
                     <th>Tipo de dispositivo</th>
