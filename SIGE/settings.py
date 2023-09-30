@@ -42,7 +42,9 @@ INSTALLED_APPS = [
     'dispositivos.apps.DispositivosConfig',
     'tailwind',   
     'theme',
-    'django_browser_reload'
+    'django_browser_reload',
+    # 'crispy_forms',
+    #'crispy_tailwind',
 ]
 
 TAILWIND_APP_NAME = 'theme'
@@ -66,6 +68,8 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'SIGE.urls'
+
+LOGIN_REDIRECT_URL = 'inicio'
 
 TEMPLATES = [
     {
