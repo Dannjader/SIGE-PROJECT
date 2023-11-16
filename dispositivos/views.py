@@ -1,7 +1,7 @@
 from django.contrib.auth import login
 from django.contrib.auth.forms import AuthenticationForm
 from django.shortcuts import render, redirect
-from dispositivos.models import Reporte, Dispositivo, Servicio
+from dispositivos.models import Dispositivo, Servicio
 
 # # Create your views here.
 
@@ -30,8 +30,3 @@ def dispositivos_list(request):
 def servicios_list(request):
     servicios = Servicio.objects.all()
     return render(request, 'servicios_list.html', {'servicios': servicios})
-
-
-def reporte_list(request):
-    reportes = Reporte.objects.all()
-    return render(request, 'reporte_list.html', {'reportes': reportes})
