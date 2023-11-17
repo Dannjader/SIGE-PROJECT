@@ -56,6 +56,9 @@ ROOT_URLCONF = 'SIGE.urls'
 
 LOGIN_REDIRECT_URL = 'inicio'
 
+
+AUTH_USER_MODEL = 'dispositivos.CustomUser'
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',

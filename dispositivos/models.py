@@ -1,9 +1,15 @@
+from django.contrib.auth.models import AbstractUser
 from django.db import models
+
+
+class CustomUser(AbstractUser):
+    cargo = models.CharField(max_length=100)
 
 
 class Responsable(models.Model):
     nombre = models.CharField(max_length=100)
     apellido = models.CharField(max_length=100)
+    cargo = models.CharField(max_length=100)
     email = models.EmailField(max_length=100)
 
     def __str__(self):
@@ -24,9 +30,16 @@ class Dispositivo(models.Model):
 
 
 class Servicio(models.Model):
-    nombre_servicio = models.CharField(max_length=100)
-    descripcion = models.TextField(max_length=300)
+    CHOICES = (
+        ('error', 'Error'),
+        ('mejora', 'Mejora'),
+        ('nueva funcion', 'Nueva Funcion'),
+    )
+    nombre_servicio = models.CharField(max_length=100, choices=CHOICES)
+    requerimiento = models.CharField(max_length=100)
+    descripcion = models.TextField(max_length=500)
     dispositivo = models.ForeignKey(Dispositivo, on_delete=models.CASCADE)
+    fecha = models.DateField(auto_now=True)
 
     def __str__(self):
         return f' {self.nombre_servicio} {self.descripcion}{self.dispositivo}'

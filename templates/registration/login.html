@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Entrar</title>
+  </head>
+  <body>
+    {% block content %}
+      <div class="row">
+        <div class="card">
+          <div class="card-body">
+            <h2>Ingreso al Sistema</h2>
+            <hr />
+            <form method="post">
+              {% csrf_token %}
+              {{ form.as_p }}
+              <button type="submit">Iniciar Sesion</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    {% endblock %}
+  </body>
+</html>
