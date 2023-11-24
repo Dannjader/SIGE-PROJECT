@@ -57,8 +57,6 @@ ROOT_URLCONF = 'SIGE.urls'
 LOGIN_REDIRECT_URL = 'inicio'
 
 
-AUTH_USER_MODEL = 'dispositivos.CustomUser'
-
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -87,6 +85,17 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+# DATABASES = {
+#         'default': {
+#             'ENGINE': 'django.db.backends.mysql',
+#             'NAME': 'inventario_tic',
+#             'USER': 'root',
+#             'PASSWORD': '',
+#             'HOST': 'localhost',
+#             'PORT': '3306',
+#         }
+#     }
 
 
 # Password validation
@@ -120,11 +129,11 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
-#STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 STATIC_URL = '/static/'
 
-#STATICFILES_DIRS = [BASE_DIR / "static"]
+# STATICFILES_DIRS = [BASE_DIR / "static"]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
