@@ -1,22 +1,27 @@
+{% load tailwind_tags %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Entrar</title>
+    {% comment %} <link rel="stylesheet" href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css" /> {% endcomment %}
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body>
     {% block content %}
-      <div class="row">
-        <div class="card">
-          <div class="card-body">
-            <h2>Ingreso al Sistema</h2>
-            <hr />
-            <form method="post">
-              {% csrf_token %}
-              {{ form.as_p }}
-              <button type="submit">Iniciar Sesion</button>
-            </form>
+      <div>
+        <div class="max-w-md p-6 mx-auto mt-16 bg-white rounded-md shadow-md pt-7">
+          <h2 class="text-center text-lg font-bold text-gray-700 capitalize dark:text-white">Acceso al sistema</h2>
+
+          <div class="">
+            <div class="grid grid-cols-1 gap-6 sm:grid-cols-1">
+              <form method="post" class="grid grid-cols-1 gap-6 mt-11 sm:grid-cols-1">
+                {% csrf_token %}
+                {{ form.as_table }}
+                <button type="submit" class="px-6 py-2 font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-600 rounded-lg hover:bg-blue-500 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-80">Iniciar Sesion</button>
+              </form>
+            </div>
           </div>
         </div>
       </div>
