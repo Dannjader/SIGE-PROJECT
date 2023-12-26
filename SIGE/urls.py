@@ -21,5 +21,9 @@ from django.contrib.auth.views import LoginView
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('dispositivos.urls')),
+<<<<<<< HEAD
     path('login/', LoginView.as_view(template_name='login.html'), name='login'),
+=======
+    path("__reload__/", include("django_browser_reload.urls")),
+>>>>>>> stayling
 ]

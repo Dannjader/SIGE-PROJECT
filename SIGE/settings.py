@@ -40,7 +40,23 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'dispositivos.apps.DispositivosConfig',
+<<<<<<< HEAD
+=======
+    'tailwind',   
+    'theme',
+    'django_browser_reload',
+    # 'crispy_forms',
+    #'crispy_tailwind',
+>>>>>>> stayling
 ]
+
+TAILWIND_APP_NAME = 'theme'
+
+INTERNAL_IPS = [
+    "127.0.0.1",
+]
+
+NPM_BIN_PATH = r"C:/Program Files/nodejs/npm.cmd"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -50,13 +66,18 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    "django_browser_reload.middleware.BrowserReloadMiddleware",
 ]
 
 ROOT_URLCONF = 'SIGE.urls'
 
 LOGIN_REDIRECT_URL = 'inicio'
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> stayling
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -129,7 +150,11 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
+<<<<<<< HEAD
 # STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+=======
+STATIC_ROOT = os.path.join(BASE_DIR, '/static/')
+>>>>>>> stayling
 
 STATIC_URL = '/static/'
 
